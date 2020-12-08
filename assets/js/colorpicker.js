@@ -23,21 +23,23 @@ function pick(event) { // for hover color
     var y = event.layerY;
     var pixel = ctx.getImageData(x, y, 1, 1);
     var data = pixel.data;
+
     updatecell(data);   // updating data 
 
     for (let i = 0; i < colorcells.length; i++){    // put one color per box in table 
         var selectedColor = document.getElementById('selected-color'+(i+1));    // adding color to corresponding table cell [based on array cell]
-        var rgba = colorcells[i];  // getting the associated javascript cell [will put this color in the html table]
         
-        if (rgba != null){
+        if(colorcells[i] != null) {
+            var color = colorcells[i].pixel; // getting the associated javascript cell [will put this color in the html table]
+            var rgba = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${color[3] / 255})`
+
             selectedColor.style.background = rgba;
-            //selectedColor.textContent = rgba;
+            getcolorvalues(colorcells[i], selectedColor);  // in order to fill color values
         }
-        else{
-            rgba=(`rgba(255, 255, 255, 50)`);   // default
+        else {
+            var rgba = (`rgba(255, 255, 255, 50)`);   // default
             selectedColor.style.background = rgba;
-            //selectedColor.textContent = rgba;
-        } 
+        }
     }
   
       return rgba;
@@ -67,6 +69,7 @@ function updatecell(color){  // updating selected color to javascript array
     }
 
     
-    colorcells[emptycell] = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${color[3] / 255})`;    // putting selected color in emptycell
+    colorcells[emptycell] = {pixel: color, colorvalues: null};    // putting selected color in emptycell
+    
 
 }

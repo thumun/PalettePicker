@@ -57,7 +57,7 @@ var downloadPalette = function(){
         if (colorcells[i] == null){     // if cell is empty then use empty cell
             break;
         }
-        text+= 'Color ' + (i+1) + ': ' + colorcells[i] + '\n';
+        text+= 'Color ' + (i+1) + ': ' + colorcells[i].pixel + '\n';
     }
 
     blob = new Blob([text], { type: 'text/plain' });
