@@ -39,6 +39,8 @@ function pick(event) { // for hover color
         else {
             var rgba = (`rgba(255, 255, 255, 50)`);   // default
             selectedColor.style.background = rgba;
+            selectedColor.textContent = "";
+
         }
     }
   
