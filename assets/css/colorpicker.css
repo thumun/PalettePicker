@@ -28,8 +28,8 @@
 
 .file-upload__button {
   -webkit-appearance: none;
-  background: #1f126e;
-  border: 2px solid #120a49;
+  background: #8A7E66;
+  border: 2px solid #796c51;
   border-radius: 4px;
   outline: none;
   padding: 0.5em 0.8em;
@@ -56,8 +56,8 @@
 
 .download__button{
   -webkit-appearance: none;
-  background: #1f126e;
-  border: 2px solid #120a49;
+  background: #8A7E66;
+  border: 2px solid #796c51;
   border-radius: 4px;
   outline: none;
   padding: 0.5em 0.8em;

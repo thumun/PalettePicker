@@ -54,7 +54,7 @@
           <p>Select an image/images that you want to use as reference. Then you will have the option to pick colors from
             these images in order to create a palette.</p>
         </div>
-        <div class="col-lg-7 offset-lg-1 mx-auto">
+        <div >
           <h2></h2>
           <p>Upload Your Image:</p>
           <table>
@@ -82,18 +82,26 @@
                 <td class="color-cell" id="selected-color5"></td>
 
               </tr>
+              <tr>
+                <td>
+                  <div class="file-upload">
+                    <input class="file-upload__input" type="file" name="myFile[]" id="myFile" onchange="loadFile(event)">
+                    <button class="file-upload__button" type="button"> Upload </button>
+                    <span class="file-upload__label"></span>
+                  </div>
+                </td>
+                <td colspan="5">
+                  <div>
+                    <button class="download__button" type="button" onclick="downloadPalette()"> Download Palette </button>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
           <p></p>
-          <div class="file-upload">
-            <input class="file-upload__input" type="file" name="myFile[]" id="myFile" onchange="loadFile(event)">
-            <button class="file-upload__button" type="button"> Upload </button>
-            <span class="file-upload__label"></span>
-          </div>
+          
         </div>
-        <div class="col">
-          <button class="download__button" type="button" onclick="downloadPalette()"> Download Palette </button>
-        </div>
+
       </div>
     </div>
   </section>
