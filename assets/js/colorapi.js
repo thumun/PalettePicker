@@ -6,7 +6,7 @@ function getcolorvalues(cell, selected) {
     xhr.onload = function(e){
         if (xhr.readyState == 4){
             if (xhr.status == 200){
-                cell.colorvalues = JSON.parse(xhr.responseText); // parsing string in rder to easily get data from it 
+                cell.colorvalues = JSON.parse(xhr.responseText); // parsing string in order to easily get data from it 
                 if((cell.pixel[0]*0.299 + cell.pixel[1]*0.587 + cell.pixel[2]*0.114) > 150)
                     selected.style.color = "#000000";
                 else
