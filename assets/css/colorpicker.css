@@ -53,3 +53,22 @@
   white-space: nowrap;
   font-family: "Quicksand", sans-serif;
 }
+
+.download__button{
+  -webkit-appearance: none;
+  background: #1f126e;
+  border: 2px solid #120a49;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.5em 0.8em;
+  margin-right: 15px;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.download__button:active {
+  background: #1f126e;
+}

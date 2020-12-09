@@ -57,7 +57,12 @@ var downloadPalette = function(){
         if (colorcells[i] == null){     // if cell is empty then use empty cell
             break;
         }
-        text+= 'Color ' + (i+1) + ': ' + colorcells[i].pixel + '\n';
+        text+= `Color ${i+1}: ${colorcells[i].colorvalues.name.value}`;
+        text+= `\n\t     RGB: ${colorcells[i].colorvalues.rgb.value}`;
+        text+= `\n\t     HSL: ${colorcells[i].colorvalues.hsl.value}`;
+        text+= `\n\t     XYZ: ${colorcells[i].colorvalues.XYZ.value}`;
+        text+= `\n\t Hexcode: ${colorcells[i].colorvalues.hex.value}`;
+        text+= `\n\n`;
     }
 
     blob = new Blob([text], { type: 'text/plain' });

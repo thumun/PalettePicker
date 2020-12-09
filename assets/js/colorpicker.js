@@ -71,7 +71,7 @@ function updatecell(color){  // updating selected color to javascript array
     }
 
     
-    colorcells[emptycell] = {pixel: color, colorvalues: null};    // putting selected color in emptycell
+    colorcells[emptycell] = {pixel: color, colorvalues: null};    // putting selected color in emptycell ; pixel: rgb data inputting into API, colorvalues = output from API
     
 
 }
