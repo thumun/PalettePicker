@@ -1,4 +1,6 @@
 
+
+
 function pageLoaded() {  
 
 Array.prototype.forEach.call(document.querySelectorAll(".file-upload__button"), function(button) {
@@ -46,7 +48,8 @@ var loadFile = function(event) {
     ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
         //img.style.display = 'none';
     };
-    
+    originalImageData = null;
+    document.getElementById("myRange").value = "50";
 };
 
 var downloadPalette = function(){
