@@ -93,6 +93,15 @@
                 <td colspan="5">
                   <div>
                     <button class="download__button" type="button" onclick="downloadPalette()"> Download Palette </button>
+                    <div class="slidecontainer">
+                      <input type="range" min="0" max="360" value="180" class="slider" id="hue"  onchange="brightness()">
+                    </div>
+                    <div class="slidecontainer">
+                      <input type="range" min="0" max="100" value="50" class="slider" id="saturation"  onchange="brightness()">
+                    </div>
+                    <div class="slidecontainer">
+                      <input type="range" min="0" max="100" value="50" class="slider" id="brightness"  onchange="brightness()">
+                    </div>
                   </div>
                 </td>
               </tr>
@@ -148,6 +157,8 @@
   <script src="assets/js/colorapi.js"></script>  
   <script src="assets/js/colorpicker.js"></script>
   <script src="assets/js/filestuff.js"></script>
+  <script src="assets/js/imghsl.js"></script>
+
 </body>
 
 </html>
