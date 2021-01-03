@@ -25,8 +25,6 @@ var brightness = function () {
         hsl[0] = hsl[0] + (hue - 180);
         hsl[1] = hsl[1] + (saturation - 50);
         hsl[2] = hsl[2] + (brightness - 50);
-        //if(hsl[2] < 0) hsl[2] = 0;
-        //if(hsl[2] > 100) hsl[2] = 100;
 
         rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
 
