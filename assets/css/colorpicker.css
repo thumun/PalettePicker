@@ -72,3 +72,7 @@
 .download__button:active {
   background: #1f126e;
 }
+
+#canvas{
+  border: 2px solid #c7fbff;
+}
