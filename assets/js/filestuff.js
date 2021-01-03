@@ -49,7 +49,9 @@ var loadFile = function(event) {
         //img.style.display = 'none';
     };
     originalImageData = null;
-    document.getElementById("myRange").value = "50";
+    document.getElementById("hue").value = "180";
+    document.getElementById("saturation").value = "50";
+    document.getElementById("brightness").value = "50";
 };
 
 var downloadPalette = function(){

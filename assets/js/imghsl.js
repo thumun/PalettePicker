@@ -1,27 +1,7 @@
 var ctx = canvas.getContext('2d');
 var originalImageData = null;
 
-var grayscale = function () {
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const data = imageData.data;
-    for (var i = 0; i < data.length; i += 4) {
-        var avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
-        data[i] = avg; // red
-        data[i + 1] = avg; // green
-        data[i + 2] = avg; // blue
-    }
-    ctx.putImageData(imageData, 0, 0);
-};
-
-var hue = function () {
-
-};
-
-var saturation = function () {
-
-};
-
-var brightness = function (sliderValue) {
+var brightness = function () {
 
     if(originalImageData == null) {
         originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -35,11 +15,16 @@ var brightness = function (sliderValue) {
         b = imageDataCopy[i + 2]; // blue
 
         hsl = RGBToHSL(r,g,b);
-        
     
         //console.log("slider value:" + sliderValue);
 
-        hsl[2] = hsl[2] + (sliderValue - 50);
+        let hue = document.getElementById("hue").value;
+        let saturation = document.getElementById("saturation").value;
+        let brightness = document.getElementById("brightness").value;
+
+        hsl[0] = hsl[0] + (hue - 180);
+        hsl[1] = hsl[1] + (saturation - 50);
+        hsl[2] = hsl[2] + (brightness - 50);
         //if(hsl[2] < 0) hsl[2] = 0;
         //if(hsl[2] > 100) hsl[2] = 100;
 
