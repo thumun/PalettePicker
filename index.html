@@ -30,7 +30,7 @@
       </div>
     </div>
   </nav>
-  <header class="masthead" style="background-image: url('assets/img/mainbg.jpg');/*opacity: 0.5;*/">
+  <header class="masthead" style="background-image: url('assets/img/mainbgv2.jpg');/*opacity: 0.5;*/">
     <div class="intro-body">
       <div class="container">
         <div class="row">
@@ -93,15 +93,33 @@
                 <td colspan="5">
                   <div>
                     <button class="download__button" type="button" onclick="downloadPalette()"> Download Palette </button>
-                    <div class="slidecontainer">
-                      <input type="range" min="0" max="360" value="180" class="slider" id="hue"  onchange="brightness()">
-                    </div>
-                    <div class="slidecontainer">
-                      <input type="range" min="0" max="100" value="50" class="slider" id="saturation"  onchange="brightness()">
-                    </div>
-                    <div class="slidecontainer">
-                      <input type="range" min="0" max="100" value="50" class="slider" id="brightness"  onchange="brightness()">
-                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <br>
+                  <br>
+                  <br>
+                  <p>Hue:
+                  <br>
+                  Saturation:
+                  <br>
+                  Brightness:</p>
+                </td>
+
+                <td>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="360" value="180" class="slider" id="hue"  onchange="brightness()">
+                  </div>
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="50" class="slider" id="saturation"  onchange="brightness()">
+                  </div>
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="50" class="slider" id="brightness"  onchange="brightness()">
                   </div>
                 </td>
               </tr>
@@ -116,18 +134,6 @@
   </section>
   <section id="download" class="download-section content-section text-center"
     style="filter: brightness(80%); background-image: url('assets/img/minibg.jpg');">
-    <div class="container">
-      <div class="col-lg-6 offset-lg-0 mx-auto">
-
-      </div>
-      <div class="row">
-        <div class="col-lg-6 offset-lg-0 mx-auto">
-
-        </div>
-        <div class="col-lg-6 offset-lg-0 mx-auto">
-        </div>
-      </div>
-    </div>
   </section>
   <section id="contact" class="content-section text-center">
     <div class="container">
