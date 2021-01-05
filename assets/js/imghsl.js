@@ -1,13 +1,13 @@
 var ctx = canvas.getContext('2d');
 var originalImageData = null;
 
-var brightness = function () {
+var hsleditor = function () {
 
     if(originalImageData == null) {
         originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     }
 
-    var imageDataCopy = new Uint8ClampedArray(originalImageData.data);
+    var imageDataCopy = new Uint8ClampedArray(originalImageData.data);  // duplicated image on canvas so orig image not overwritten
 
     for (var i = 0; i < imageDataCopy.length; i += 4) {
         r = imageDataCopy[i]; // red
@@ -16,8 +16,6 @@ var brightness = function () {
 
         hsl = RGBToHSL(r,g,b);
     
-        //console.log("slider value:" + sliderValue);
-
         let hue = document.getElementById("hue").value;
         let saturation = document.getElementById("saturation").value;
         let brightness = document.getElementById("brightness").value;
@@ -35,6 +33,28 @@ var brightness = function () {
     const imageData = new ImageData(imageDataCopy, originalImageData.width, originalImageData.height)
     ctx.putImageData(imageData, 0, 0);
 };
+
+var rangeSlider = function(){
+    var slider = $('.range-slider'),
+        range = $('.range-slider__range'),
+        value = $('.range-slider__value');
+      
+    slider.each(function(){
+  
+      value.each(function(){
+        var value = $(this).prev().attr('value');
+        $(this).html(value);
+      });
+  
+      range.on('input', function(){
+        $(this).next(value).html(this.value);
+      });
+    });
+  };
+  
+  rangeSlider();
+
+// functions below courtesy of: https://css-tricks.com/converting-color-spaces-in-javascript/
 
 function RGBToHSL(r, g, b) {
     // Make r, g, and b fractions of 1
@@ -83,7 +103,7 @@ function RGBToHSL(r, g, b) {
     return [h, s, l];
 }
 
-function HSLToRGB(h, s, l) {
+function HSLToRGB(h, s, l) { // converts hsl back to rgb (since other components work w/ rgb)
     // Must be fractions of 1
     s /= 100;
     l /= 100;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- test -->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -50,12 +50,10 @@
         <div class="col-lg-10 offset-lg-0 mx-auto">
           <h2>Pick a palette</h2>
           <p>How it works:</p>
-          <p></p>
           <p>Select an image/images that you want to use as reference. Then you will have the option to pick colors from
             these images in order to create a palette.</p>
         </div>
-        <div >
-          <h2></h2>
+        <div>
           <p>Upload Your Image:</p>
           <table>
             <thead>
@@ -82,53 +80,55 @@
                 <td class="color-cell" id="selected-color5"></td>
 
               </tr>
-              <tr>
-                <td>
-                  <div class="file-upload">
-                    <input class="file-upload__input" type="file" name="myFile[]" id="myFile" onchange="loadFile(event)">
-                    <button class="file-upload__button" type="button"> Upload </button>
-                    <span class="file-upload__label"></span>
-                  </div>
-                </td>
-                <td colspan="5">
-                  <div>
-                    <button class="download__button" type="button" onclick="downloadPalette()"> Download Palette </button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <br>
-                  <br>
-                  <br>
-                  <p>Hue:
-                  <br>
-                  Saturation:
-                  <br>
-                  Brightness:</p>
-                </td>
-
-                <td>
-                  <br>
-                  <br>
-                  <br>
-                  <div class="slidecontainer">
-                    <input type="range" min="0" max="360" value="180" class="slider" id="hue"  onchange="brightness()">
-                  </div>
-                  <div class="slidecontainer">
-                    <input type="range" min="0" max="100" value="50" class="slider" id="saturation"  onchange="brightness()">
-                  </div>
-                  <div class="slidecontainer">
-                    <input type="range" min="0" max="100" value="50" class="slider" id="brightness"  onchange="brightness()">
-                  </div>
-                </td>
-              </tr>
+          </table>
+          <table class="buttonformat">
+            <tr>
+              <td col span="1" style="width: 70%;">
+                <div class="file-upload">
+                  <input class="file-upload__input" type="file" name="myFile[]" id="myFile" onchange="loadFile(event)">
+                  <button class="file-upload__button" type="button"> Upload </button>
+                  <span class="file-upload__label"></span>
+                </div>
+              </td>
+              <td col span="1" style="width: 70%;">
+                <div>
+                  <button class="download__button" type="button" onclick="downloadPalette()"> Download Palette </button>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <br>
+          <br>
+          <p><b>You can adjust your uploaded image using the sliders below:</b></p>
+          <table class="hsltb">
+            <tr>
+              <td text-align: left;>
+                <p>
+                  Hue:
+                <div class="range-slider">
+                  <input class="range-slider__range" type="range" value="180" min="0" max="360" id="hue"
+                    onchange="hsleditor()">
+                  <span class="range-slider__value">0</span>
+                </div>
+                <br>
+                Saturation: <div class="range-slider">
+                  <input class="range-slider__range" type="range" value="50" min="0" max="100" id="saturation"
+                    onchange="hsleditor()">
+                  <span class="range-slider__value">0</span>
+                </div>
+                <br>
+                Brightness: <div class="range-slider">
+                  <input class="range-slider__range" type="range" value="50" min="0" max="100" id="brightness"
+                    onchange="hsleditor()">
+                  <span class="range-slider__value">0</span>
+                </div>
+                </p>
+              </td>
+            </tr>
             </tbody>
           </table>
-          <p></p>
-          
         </div>
-
       </div>
     </div>
   </section>
@@ -143,8 +143,8 @@
           <p>Feel free to give feedback about this site!</p>
           <ul class="list-inline banner-social-buttons">
             <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"
-                onclick="window.location.href='https://www.instagram.com/aheniru/?hl=en';"> <i class="fa fa-instagram fa-fw"></i><span
-                  class="network-name">Instagram</span></button></li>
+                onclick="window.location.href='https://www.instagram.com/aheniru/?hl=en';"> <i
+                  class="fa fa-instagram fa-fw"></i><span class="network-name">Instagram</span></button></li>
           </ul>
         </div>
       </div>
@@ -160,7 +160,7 @@
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="assets/js/grayscale.js"></script>
-  <script src="assets/js/colorapi.js"></script>  
+  <script src="assets/js/colorapi.js"></script>
   <script src="assets/js/colorpicker.js"></script>
   <script src="assets/js/filestuff.js"></script>
   <script src="assets/js/imghsl.js"></script>
