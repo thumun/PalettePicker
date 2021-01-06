@@ -1,9 +1,9 @@
 var ctx = canvas.getContext('2d');
 var originalImageData = null;
 
-var hsleditor = function () {
+var hsleditor = function () {   // adjusts hsl value of img 
 
-    if(originalImageData == null) {
+    if (originalImageData == null) {
         originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     }
 
@@ -14,45 +14,48 @@ var hsleditor = function () {
         g = imageDataCopy[i + 1]; // green
         b = imageDataCopy[i + 2]; // blue
 
-        hsl = RGBToHSL(r,g,b);
-    
+        hsl = RGBToHSL(r, g, b);    // converts to hsl 
+
         let hue = document.getElementById("hue").value;
         let saturation = document.getElementById("saturation").value;
         let brightness = document.getElementById("brightness").value;
 
-        hsl[0] = hsl[0] + (hue - 180);
+        // adjusts the pixel's hue/saturation/lightness based on slider val
+        hsl[0] = hsl[0] + (hue - 180);  
         hsl[1] = hsl[1] + (saturation - 50);
         hsl[2] = hsl[2] + (brightness - 50);
 
-        rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
+        rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]); // converts back to rgb
 
-        imageDataCopy[i] = rgb[0];
-        imageDataCopy[i+1] = rgb[1];
-        imageDataCopy[i+2] = rgb[2];
+        imageDataCopy[i] = rgb[0];  // inputs rgb data for the pixel back into array
+        imageDataCopy[i + 1] = rgb[1];
+        imageDataCopy[i + 2] = rgb[2];
     }
     const imageData = new ImageData(imageDataCopy, originalImageData.width, originalImageData.height)
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);  // paints it back onto canvas (repainting img)
 };
 
-var rangeSlider = function(){
+// slider code below from: https://codepen.io/seanstopnik/pen/CeLqA 
+
+var rangeSlider = function () {
     var slider = $('.range-slider'),
         range = $('.range-slider__range'),
         value = $('.range-slider__value');
-      
-    slider.each(function(){
-  
-      value.each(function(){
-        var value = $(this).prev().attr('value');
-        $(this).html(value);
-      });
-  
-      range.on('input', function(){
-        $(this).next(value).html(this.value);
-      });
+
+    slider.each(function () {
+
+        value.each(function () {
+            var value = $(this).prev().attr('value');
+            $(this).html(value);
+        });
+
+        range.on('input', function () {
+            $(this).next(value).html(this.value);
+        });
     });
-  };
-  
-  rangeSlider();
+};
+
+rangeSlider();
 
 // functions below courtesy of: https://css-tricks.com/converting-color-spaces-in-javascript/
 
