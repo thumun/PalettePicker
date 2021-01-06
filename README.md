@@ -18,3 +18,7 @@ Tools:
     
     HSL Sliders: 
         These sliders allow the user to edit the image's hue, saturation, and/or lightness (brightness). 
+        
+Website:
+    
+    https://palettepicker.netlify.app/#
